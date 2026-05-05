@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 
 const Logo = () => {
   return (
-    <div >
+    <div className='fixed w-screen' >
     <Link to="/createfirstpage">
      <div className='bg-black h-screen '>
          <div className='flex justify-center items-center '>
