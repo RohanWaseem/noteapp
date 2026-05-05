@@ -21,7 +21,7 @@ const Addnewtitlepage = () => {
     setSavepageopen(true)
   }
   return (
-    <div className='bg-gray-950 h-screen'>
+    <div className='bg-gray-950 h-screen w-full fixed'>
       
 
       <div className='flex justify-between p-5'>
