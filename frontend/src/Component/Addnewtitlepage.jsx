@@ -61,7 +61,7 @@ const Addnewtitlepage = () => {
         </div>
       </div>
 
-      <div className="h-100 pl-5 pr-5">
+      <div className="h-100 pl-5 pr-5 fixed">
         <textarea
           type="text"
           className="text-white mt-5 align-top h-100 text-xl outline-none  w-full  "
