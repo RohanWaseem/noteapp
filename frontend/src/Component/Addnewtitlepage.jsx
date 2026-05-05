@@ -16,7 +16,7 @@ const Addnewtitlepage = () => {
     setSavepageopen(true);
   };
   return (
-    <div className="bg-gray-950 h-screen w-full fixed">
+    <div className="bg-gray-950 h-full w-full fixed">
       <div className="flex justify-between p-5">
         <div>
           <Link to="/Createfirstpage">
