@@ -4,10 +4,10 @@ import {Link} from "react-router-dom"
 
 const Logo = () => {
   return (
-    <div className="h-screen">
+    <div >
     <Link to="/createfirstpage">
      <div className='bg-black h-screen '>
-         <div className='flex justify-center items-center h-screen'>
+         <div className='flex justify-center items-center '>
            <img src={Loogo} alt="" className=' '  />
          </div>
        </div>
