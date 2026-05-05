@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from './Component/logo'
+import Logo from './Component/Logo'
 
 import {BrowserRouter , Routes , Route}  from "react-router-dom"
 import Createfirstpage from './Component/Createfirstpage'
