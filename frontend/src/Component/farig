@@ -1,0 +1,12 @@
+
+   <div className='text-white flex justify-center mt-10   '>
+        
+        <img src={vvv} alt="" className='w-100  ' />
+
+    
+        </div>
+
+        <div className='flex justify-center relative bottom-10'>
+        <h1 className='text-white'>Create Your First note!</h1>
+
+        </div>

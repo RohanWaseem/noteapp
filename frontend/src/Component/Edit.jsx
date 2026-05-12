@@ -1,15 +1,37 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import info from "../assets/info.png";
 import back from "../assets/back.png";
 import save from "../assets/save1.png";
 import i from "../assets/i.png";
 import { Link } from "react-router-dom";
 
-const Addnewtitlepage = () => {
+const Edit = () => {
 
   const [title , setTitle] =  useState("")
   const [data , setData] =  useState("")
   const [savepageopen, setSavepageopen] = useState(false);
+
+      const [fetchdata , setFetchdata] =  useState([])
+
+const titlename =  localStorage.getItem("reviewtitlename")
+  
+
+useEffect(()=>{
+  const saveddata = JSON.parse(localStorage.getItem("title")) || []
+  setFetchdata(saveddata)
+},[])
+
+
+ useEffect(() => {
+  const singleData = fetchdata.find((r) => r.title === titlename)
+
+  if (singleData) {
+    setData(singleData.data)
+    setTitle(singleData.title)
+  }
+}, [fetchdata, titlename])
+
+
 
   const handlecancel = () => {
     setSavepageopen(false);
@@ -67,37 +89,70 @@ const Addnewtitlepage = () => {
               alt=""
             />
           </div>
-          <div onClick={handlesavepage}>
+          <div >
             <img
               src={save}
               className="bg-gray-700 w-12 h-10 p-2 rounded-lg"
               alt=""
+              onClick={handlesavepage}
             />
           </div>
         </div>
       </div>
 
-      <div className="pl-5 pr-5">
-        <div className="text-white text-4xl pt-5  ">
-          <textarea
-            type="text"
-            placeholder="Title"
-            className=" overflow-hidden outline-none h-15    w-full   "
-            value={title}
-            onChange={(e)=>setTitle(e.target.value)}
-          />
-        </div>
-      </div>
-
-      <div className=" pl-5 pr-5 ">
+   <div className="px-5">
+  <div className="pt-5">
+    {fetchdata
+      .filter((r) => r.title === titlename)
+      .map((r) => (
         <textarea
-          type="text"
-          className="text-white mt-5 align-top  text-xl outline-none pr-5  w-full  h-100   "
-          placeholder="Type something..."
-           value={data}
-            onChange={(e)=>setData(e.target.value)}
+          placeholder="Title"
+          value={title}
+          onChange={(e)=>setTitle(e.target.value)}
+          className="
+            w-screen
+            bg-transparent
+            text-white
+            text-4xl
+            font-bold
+            resize-none
+            outline-none
+            overflow-hid
+            leading-tight
+            placeholder:text-gray-500
+            border-none
+            h-full
+          "
         />
-      </div>
+      ))}
+  </div>
+</div>
+
+<div className="px-5 mt-4">
+  {fetchdata
+    .filter((r) => r.title === titlename)
+    .map((r) => (
+      <textarea
+        placeholder="Type something..."
+        value={data}
+        onChange={(e)=>setData(e.target.value)}
+        className="
+          w-full
+          min-h-screen
+          bg-transparent
+          text-white
+          text-lg
+          leading-8
+          resize-none
+          outline-none
+          overflow-hidden
+          placeholder:text-gray-500
+          border-none
+          pb-10
+        "
+      />
+    ))}
+</div>
 
       {savepageopen && (
         <div className="flex justify-center items-center relative  bottom-60  ">
@@ -114,11 +169,13 @@ const Addnewtitlepage = () => {
             <div className="flex justify-center gap-10 mt-5">
               <div
                 className="bg-red-700 text-2xl text-white pl-4 pr-4 pt-1 pb-1  rounded-xl"
-                onClick={handlecancel}
+                // onClick={handlecancel}
               >
                 <button>Cancel</button>
               </div>
-              <div className="bg-green-700 text-2xl text-white pl-6 pr-6 pt-1 pb-1  rounded-xl" onClick={handlesavenewdata}>
+              <div className="bg-green-700 text-2xl text-white pl-6 pr-6 pt-1 pb-1  rounded-xl" 
+            //   onClick={handlesavenewdata}
+              >
                 <button>Save</button>
               </div>
             </div>
@@ -129,4 +186,4 @@ const Addnewtitlepage = () => {
   );
 };
 
-export default Addnewtitlepage;
+export default Edit;
