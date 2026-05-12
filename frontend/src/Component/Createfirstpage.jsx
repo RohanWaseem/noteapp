@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import search from "../assets/searcg3.png"
 import info from "../assets/info.png"
+import chatbot from "../assets/gemini.png"
+
 import dot from "../assets/3dot.png"
 import vvv from "../assets/vvv.webp"
 import {Link} from "react-router-dom"
@@ -42,6 +44,7 @@ const handlereviewbutton=(title)=>{
                 
             </div>
 
+           <Link to="/chatgpt"> <div><img src={chatbot}  className='bg-gray-700 w-10 h-10 p-2 rounded-lg' alt="" /></div></Link>
 
             <div><img src={info}  className='bg-gray-700 w-12 h-10 p-2 rounded-lg' alt="" /></div>
             <div><img src={dot}  className='bg-gray-700 w-10 p-2 rounded-lg' alt="" /></div>

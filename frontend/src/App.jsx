@@ -8,6 +8,7 @@ import Listpage from './Component/Listpage'
 import Search from './Component/Search'
 import Revieworeditpage from './Component/Revieworeditpage'
 import Edit from './Component/Edit'
+import Chatgpt from './Component/Chatgpt'
 const App = () => {
   return (
     <div >
@@ -21,6 +22,8 @@ const App = () => {
         <Route  path='/search' element={<Search/>} />
         <Route  path='/revieweditpage' element={<Revieworeditpage/>} />
         <Route  path='/edit' element={<Edit/>} />
+        <Route  path='/chatgpt' element={<Chatgpt/>} />
+
 
 
 

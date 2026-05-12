@@ -1,17 +1,26 @@
-const express = require("express")
-const cors =  require("cors")
-const mongoose =  require("mongoose")
+const express = require("express");
+const cors = require("cors");
+const axios = require("axios");
 
-const app = express()
+const app = express();
 
-app.use(express.json())
-app.use(cors())
+app.use(cors());
+app.use(express.json());
 
+app.post("/chat", async (req, res) => {
+    try {
+        const response = await axios.post("http://localhost:5001/chat", {
+            message: req.body.message
+        });
 
+        res.json(response.data);
 
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ reply: "Backend error" });
+    }
+});
 
-
-
-app.listen(5000,()=>{
-    console.log("server is started at port 5000")
-})
+app.listen(5000, () => {
+    console.log("Node server running on 5000");
+});
