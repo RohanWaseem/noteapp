@@ -33,7 +33,7 @@ const handlereviewbutton=(title)=>{
   return (
     <div className='bg-gray-950 h-screen fixed  w-screen'>
 
-        <div className='flex gap-10 p-5 justify-between'>
+        <div className='flex p-5 justify-between'>
             <div>
            <Link to="/"> <div><h1 className='text-orange-500 text-3xl  font-black'>Notepad</h1></div></Link></div>
 
