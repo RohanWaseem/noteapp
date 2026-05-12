@@ -44,7 +44,6 @@ const handlereviewbutton=(title)=>{
                 
             </div>
 
-           <Link to="/chatgpt"> <div><img src={chatbot}  className='bg-gray-700 w-10 h-10 p-2 rounded-lg' alt="" /></div></Link>
 
             <div><img src={info}  className='bg-gray-700 w-10 h-10 p-2 rounded-lg' alt="" /></div>
             <div><img src={dot}  className='bg-gray-700 w-10 p-2 rounded-lg' alt="" /></div>
