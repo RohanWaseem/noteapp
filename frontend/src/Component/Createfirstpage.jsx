@@ -37,7 +37,7 @@ const handlereviewbutton=(title)=>{
             <div>
            <Link to="/"> <div><h1 className='text-orange-500 text-3xl  font-black'>Notepad</h1></div></Link></div>
 
-            <div className='flex gap-5'>
+            <div className='flex gap-1'>
             <div  className='bg-gray-700 w-10 h-10 p-2 rounded-lg flex gap-2'>
                 
               <Link to="/search"> <div><img src={search}  className='w-10 ' alt="" /> </div></Link> 
@@ -46,7 +46,7 @@ const handlereviewbutton=(title)=>{
 
            <Link to="/chatgpt"> <div><img src={chatbot}  className='bg-gray-700 w-10 h-10 p-2 rounded-lg' alt="" /></div></Link>
 
-            <div><img src={info}  className='bg-gray-700 w-12 h-10 p-2 rounded-lg' alt="" /></div>
+            <div><img src={info}  className='bg-gray-700 w-10 h-10 p-2 rounded-lg' alt="" /></div>
             <div><img src={dot}  className='bg-gray-700 w-10 p-2 rounded-lg' alt="" /></div>
 
           
